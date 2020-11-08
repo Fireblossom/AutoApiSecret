@@ -47,6 +47,11 @@ jobs:
         rm -f 2.py
         rm -f configid.txt
         rm -f configkey.txt    
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "update token" -a
     - name: GitHub Push
       # You may pin to the exact commit or the version.
       # uses: ad-m/github-push-action@40bf560936a8022e68a3c00e7d2abefaf01305a6
